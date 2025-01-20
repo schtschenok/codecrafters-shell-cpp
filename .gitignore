@@ -47,3 +47,8 @@ _deps
 
 build/
 vcpkg_installed
+
+# JetBrains
+.idea
+cmake-build-debug
+cmake-build-release
