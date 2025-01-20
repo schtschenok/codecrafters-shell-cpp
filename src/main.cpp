@@ -1,13 +1,18 @@
-#include <iostream>
+#include <cstring>
+#include <cstdio>
+
+#define INPUT_BUFFER_SIZE 1024
 
 int main() {
-    // Flush after every std::cout / std:cerr
-    std::cout << std::unitbuf;
-    std::cerr << std::unitbuf;
+    setvbuf(stdout, nullptr, _IONBF, 0);
+    setvbuf(stderr, nullptr, _IONBF, 0);
 
-    // Uncomment this block to pass the first stage
-    std::cout << "$ ";
+    printf("$ ");
 
-    std::string input;
-    std::getline(std::cin, input);
+    char input_buffer[INPUT_BUFFER_SIZE];
+    fgets(input_buffer, INPUT_BUFFER_SIZE, stdin);
+
+    input_buffer[strcspn(input_buffer, "\r\n")] = 0;
+
+    printf("%s: command not found", input_buffer);
 }
