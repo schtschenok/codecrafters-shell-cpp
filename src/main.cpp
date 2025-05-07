@@ -1,6 +1,4 @@
 #include <clocale>
-#include <corecrt_memcpy_s.h>
-#include <corecrt_wstring.h>
 #include <cstddef>
 #include <cstdio>
 #include <cstdlib>
